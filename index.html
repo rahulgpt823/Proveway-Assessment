@@ -3,42 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel=" stylesheet" href="styles.css"></style>
-    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <title>BOGO Offer</title>
 </head>
 <body>
-    <!--This is the main component -->
     <main>
-        <!--This is the top most component-->
         <div id="header">
-            <div id="br1"> </div>
-            <h1 >YAY! It's BOGO</h1>
-            <div id ="br2"></div>
+            <div id="br1"></div>
+            <h1>YAY! It's BOGO</h1>
+            <div id="br2"></div>
         </div>
-        <div class="prim_card">
-            <div class="col1">
-                <form class ="prim_form">
-                 <div class="inline-section">
-                   <input type="radio" class="btn1">
-                   <h1>1 Unit</h1>
-                    <h4>10% off</h4>
-                </div>
-                    <div class="col1-bottom">
-                        <h3> Special price</h3>
-                    </div>  
-                </form> 
+
+        <!-- Container to hold all the cards -->
+        <div class="prim_card" id="cardContainer">
+            <!-- A single card template to be reused -->
+            <div class="card-template" style="display: none;">
+                <form class="prim_form">
+                    <div class="inline-section">
+                        <input type="radio" class="btn1">
+                        <h1 class="unit-text"></h1>
+                        <h4 class="discount-text"></h4>
+                        <div class="badge" style="display: none;"></div>
+                    </div>
+                    <p class="standard-price">Standard Price</p>
+                    <div class="price-section">
+                        <h2 class="current-price"></h2>
+                        <h3 class="original-price"></h3>
+                    </div>
+                    <div class="size-color-selection hidden">
+                        <div class="size-color-row">
+                            <label>Size:</label>
+                            <select class="size-select">
+                                <option>S</option>
+                                <option>M</option>
+                                <option>L</option>
+                            </select>
+                            <label>Colour:</label>
+                            <select class="color-select">
+                                <option>Black</option>
+                                <option>White</option>
+                                <option>Red</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div class="col2">
-                <form class ="prim_form">
-                 <div class="inline-section">
-                   <h1>$10.00 </h1>
-                   <h1> USD
+        </div>
+        <!-- Footer section -->
+        <div class="footer">
+            <div class="footer-content">
+                <div class="total-section">
+                    <p class="free-delivery">Free Delivery</p>
+                    <p>Total: <span class="total-price">$18.00 USD</span></p>
                 </div>
-                    <div class="col2-bottom">
-                        <h3> $24.00 USD</h3>
-                    </div>  
-                </form> 
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <p class="powered-by">© Powered by Pumper</p>
         </div>
     </main>
+    <script src="script.js"></script>
 </body>
 </html>
