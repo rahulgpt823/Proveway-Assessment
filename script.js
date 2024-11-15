@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardData = [
         {
             unitText: '1 Unit',
-            standardPrice:'standard Price',
+            standardPrice:'Standard Price',
             discountText: '10% off',
             currentPrice: '$10.00 USD',
             originalPrice: '$24.00 USD',
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             currentPrice: '$18.00 USD',
             originalPrice: '$24.00 USD',
             badgeText: 'MOST POPULAR',
-            isBadgeVisible: true,
+            isBadgeVisible: false,
             size: 'S',
             color: 'Colour'
         },
