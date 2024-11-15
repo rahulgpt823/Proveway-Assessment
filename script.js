@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             currentPrice: '$18.00 USD',
             originalPrice: '$24.00 USD',
             badgeText: 'MOST POPULAR',
-            isBadgeVisible: false,
+            isBadgeVisible: true,
             size: 'S',
             color: 'Colour'
         },
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     // Create and append each card
-    cardData.forEach(data => {
+    cardData.forEach((data,index) => {
         // Clone the card template
         const cardClone = cardTemplate.cloneNode(true);
         cardClone.style.display = 'block'; // Make the cloned card visible
@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge.style.display = 'none';
         }
 
+
         // Append the card to the container
         cardContainer.appendChild(cardClone);
 
@@ -76,6 +77,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const colorSelect = cardClone.querySelector('.color-select');
     colorSelect.value = data.color;
+
+    const badgeContainer = cardClone.querySelector('.badge-container');
+    badgeContainer.dataset.cardIndex = index;
+    if (index === 1) {
+        badgeContainer.style.display = 'block';
+    } else {
+        badgeContainer.style.display = 'none';
+    }
+
     });
 });
 

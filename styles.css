@@ -45,7 +45,7 @@ main {
     flex-direction: column;
     gap: 24px;
     width: 100%;
-    margin-bottom: 0; /
+    margin-bottom: 16px; /
 }
 
 .card {
@@ -179,15 +179,32 @@ h4 {
 
 
 .size-color-selection {
-    margin-top: 24px; 
+    font-family: Inter, sans-serif;
+    max-width: 300px;
+    margin-left: 30px;
+    /* margin: 20px auto;  */
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }
 
 .size-color-header {
     display: flex;
-    align-items: center;
-    gap: 80px; /* Increased gap between labels */
-    margin-bottom: 8px;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: bold;
+    margin-left:10px;
+    margin-right:145px;
 }
+
 
 
 .size-color-selection.hidden {
@@ -195,7 +212,8 @@ h4 {
 }
 .size-color-row {
     display: flex;
-    gap: 16px; /* Increased gap between selects */
+    align-items: center;
+    margin-bottom: 10px;
 }
 
 
@@ -207,13 +225,42 @@ h4 {
 }
 
 /* Select box styling */
-.size-select, .color-select {
-    padding: 8px 12px; /* Increased padding */
+/* .size-select, .color-select {
+    padding: 8px 12px; 
     border: 1px solid #C8C8C8;
     border-radius: 4px;
     font-size: 14px;
-    width: 120px; /* Increased width */
-    height: 36px; /* Set specific height */
+    width: 120px; 
+    height: 36px; 
+} */
+
+.box-number {
+    flex: 0 0 30px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.size-select,
+.color-select {
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+@media (max-width: 480px) {
+    .size-color-selection {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .size-select,
+    .color-select {
+        transition: none;
+    }
 }
 
 
@@ -242,7 +289,12 @@ h4 {
     transform: perspective(100px) rotateX(-15deg); /* Creates 3D effect */
     transform-origin: bottom;
     background-color:#FF6B82;
+    display: none;
     ;
+}
+
+.badge-container[data-card-index="1"] {
+    display: block; /* Show only for the second card */
 }
 
 
@@ -300,30 +352,32 @@ h4 {
 .footer {
     background-color: #F8F8F8;
     padding: 20px;
-    margin-top: 32px;
+    margin-top: 16px;
     width: 100%;
     border-radius: 8px;
     box-sizing: border-box;
 }
 
 .footer-content {
-    width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+
 }
 
 .total-section {
     display: flex;
     justify-content: space-between;
+    padding : 0 16px;
     align-items: center;
     width: 100%;
-    margin-bottom: 10px; /* Add some space below the row */
+    
 }
 
 .free-delivery {
     color: #FF6B82;
     font-weight: bold;
-    margin: 0;
+    margin-right: auto;
 }
 
 .total-price {
@@ -335,12 +389,19 @@ h4 {
     background-color: #FF6B82;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 10px 16px;
     border-radius: 5px;
     font-size: 14px;
     cursor: pointer;
     width: 100%;
-    margin-top: 10px; /* Add some space above the button */
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plus-icon {
+    margin-right: 8px;
 }
 
 .powered-by {
@@ -349,3 +410,5 @@ h4 {
     text-align: right;
     margin-top: 10px; /* Add some space above the text */
 }
+
+

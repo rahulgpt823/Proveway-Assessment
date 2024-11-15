@@ -30,7 +30,7 @@
                         <input type="radio" class="btn1">
                         <h1 class="unit-text"></h1>
                         <h4 class="discount-text"></h4>
-                        <div class="badge-container">
+                        <div class="badge-container"  data-card-index="0">
                         <div class="badge" style="display: none;"></div>
                         </div>
                     </div>
@@ -44,22 +44,35 @@
                     </div>
                     </div>
                     </div>
-                    <div class="size-color-selection hidden">
+                    <div class="size-color-selection hidden" aria-labelledby="size-color-heading">
                         <div class="size-color-header">
                             <label for="size-select-1">Size</label>
                             <label for="color-select-1">Colour</label>
                         </div>
                         <div class="size-color-row">
-                            <!-- <span class="box-number">#1</span> -->
-                            <select id="size-select-1" class="size-select">
-                                <option>S</option>
-                                <option>M</option>
-                                <option>L</option>
+                            <span class="box-number" aria-hidden="true">#1</span>
+                            <select id="size-select-1" class="size-select" aria-label="Size for item 1">
+                                <option value="s">S</option>
+                                <option value="m">M</option>
+                                <option value="l">L</option>
                             </select>
-                            <select id="color-select-1" class="color-select">
-                                <option>Black</option>
-                                <option>White</option>
-                                <option>Red</option>
+                            <select id="color-select-1" class="color-select" aria-label="Color for item 1">
+                                <option value="black">Black</option>
+                                <option value="white">White</option>
+                                <option value="red">Red</option>
+                            </select>
+                        </div>
+                        <div class="size-color-row">
+                            <span class="box-number" aria-hidden="true">#2</span>
+                            <select id="size-select-2" class="size-select" aria-label="Size for item 2">
+                                <option value="s">S</option>
+                                <option value="m">M</option>
+                                <option value="l">L</option>
+                            </select>
+                            <select id="color-select-2" class="color-select" aria-label="Color for item 2">
+                                <option value="black">Black</option>
+                                <option value="white">White</option>
+                                <option value="red">Red</option>
                             </select>
                         </div>
                     </div>
@@ -74,7 +87,10 @@
                     <p class="free-delivery">Free Delivery</p>
                     <p>Total: <span class="total-price">$18.00 USD</span></p>
                 </div>
-                <button class="add-to-cart">Add to Cart</button>
+                <button class="add-to-cart">
+                    <i class="plus-icon">+</i>
+                    Add to Cart
+                </button>
             </div>
             <p class="powered-by"><i>@ Powered by Pumper</i></p>
         </div>
