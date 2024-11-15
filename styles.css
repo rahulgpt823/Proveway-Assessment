@@ -267,10 +267,16 @@ h4 {
 /* New badge styling with L-shaped connector */
 
 .badge {
+    top: 0px;
+    left :0px;
+    right:4px;
     background-color: #FF6B82;
     color: white;
     padding: 4px 12px;
     border-radius: 0 0 4px 4px;
+    display: flex;
+    min-height:auto;
+    max-width: 125px;
     font-size: 12px;
     font-weight: bold;
     white-space: nowrap;
@@ -280,16 +286,19 @@ h4 {
 .badge-container {
     position: absolute;
     top: -10px;
-    right: 20px;
-    width: 140px;  /* Width of rectangle */
+    right: 10px;
+    width: 130px;  /* Width of rectangle */
     height: 10px;   /* Height/depth of rectangle */
     background: transparent;
     border: 2px solid #FF6B82;
+    border-radius: 2px;
     border-bottom: none;  /* Remove bottom border */
-    transform: perspective(100px) rotateX(-15deg); /* Creates 3D effect */
+    transform: perspective(100px) rotateX(-20deg); /* Creates 3D effect */
     transform-origin: bottom;
     background-color:#FF6B82;
-    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     ;
 }
 
@@ -301,14 +310,14 @@ h4 {
 .badge-container::before {
     content: '';
     position: absolute;
-    top: 2;
+    top: 4;
     left: 2;
     width: 0px;
     height: 100%;
     background-color: #FF6B82;
-}
+} */
 /* Right line */
-.badge-container::after {
+ .badge-container::after {
     content: '';
     position: absolute;
     top: 0;
@@ -316,7 +325,7 @@ h4 {
     width: 0px;
     height: 100%;
     background-color: #FF6B82;
-}
+} 
 
 
 
