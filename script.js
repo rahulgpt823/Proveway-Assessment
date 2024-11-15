@@ -55,23 +55,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const standardPriceElement = cardClone.querySelector('.standard-price');
         if (data.standardPrice) {
             standardPriceElement.textContent = data.standardPrice;
-            standardPriceElement.style.display = 'block'; // Make it visible
+            standardPriceElement.style.display = 'block';
         }
-        // Show the badge if necessary
+        // badge if necessary
         const badge = cardClone.querySelector('.badge');
         if (data.isBadgeVisible && data.badgeText) {
             badge.textContent = data.badgeText;
-            badge.style.display = 'block';  // Changed from empty string to 'block'
-            badge.style.visibility = 'visible'; // Ensure visibility
+            badge.style.display = 'block';  
+            badge.style.visibility = 'visible'; 
         } else {
             badge.style.display = 'none';
         }
 
 
-        // Append the card to the container
+        // Add card to the container
         cardContainer.appendChild(cardClone);
 
-            // Set the initial size and color selections
+            
     const sizeSelect = cardClone.querySelector('.size-select');
     sizeSelect.value = data.size;
 
@@ -86,6 +86,12 @@ document.addEventListener('DOMContentLoaded', () => {
         badgeContainer.style.display = 'none';
     }
 
+     const dropdowns = cardClone.querySelectorAll('select');
+        dropdowns.forEach(dropdown => {
+            dropdown.addEventListener('click', (event) => {
+                event.stopPropagation();
+            });
+        });
     });
 });
 

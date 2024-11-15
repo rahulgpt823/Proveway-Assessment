@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: "Inter", sans-serif;
+    font-family: 'Inter', sans-serif;
     background-color: #fdfdfd;
     display: flex;
     justify-content: center;
@@ -26,6 +26,12 @@ main {
     justify-content: center;
     margin-bottom: 32px;
     width: 100%;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24.2px;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  
 }
 
 #header h1 {
@@ -42,16 +48,21 @@ main {
 
 .prim_card {
     display: flex;
+    flex-wrap:wrap;
     flex-direction: column;
     gap: 24px;
     width: 100%;
-    margin-bottom: 16px; /
+    margin-bottom: 16px;
+    top: 82px;
+    left: 59px;
+    
 }
 
 .card {
     border: 1px solid #C8C8C8;
     border-radius: 8px;
-    padding: 24px;
+    padding: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: relative;
     cursor: pointer;
     margin-bottom: 16px;
@@ -77,26 +88,18 @@ main {
 }
 
 .btn1 {
-    width: 20px;
-    height: 20px;
+    width: 14.46px;
+    height: 14.46px;
     border: 1px solid black;
     border-radius: 50%;
     background-color: white;
+    margin:0;
     cursor: pointer;
-/* Remove default radio button appearance */
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-       /* Remove default focus outline */
     outline: none;
 }
-
-/* Style for focus state */
-/* .btn1:focus {
-    outline: none;
-   
-    box-shadow: 0 0 0 2px rgba(255, 107, 130, 0.2);
-} */
 
  .btn1:checked {
     background-color: white;
@@ -109,24 +112,30 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 12px;
-    height: 12px;
+    width: 75%;
+    height: 75%;
     background-color:#FF6B82;
     border-color: #FF6B82;
     border-radius: 50%;
 } */
 
-h1 {
-    font-size: 18px;
-    font-weight: bold;
-}
 
-h4 {
+h3.unit-text {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 16.94px;
+    margin: 0;
+  }
+
+h4.discount-text {
     background-color: #FF6B82;
     color: white;
     padding: 4px 12px;
-    border-radius: 4px;
-    font-size: 12px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 14.52px;
+    text-align: center;
+    margin: 0;
 }
 
 .form-content {
@@ -136,20 +145,15 @@ h4 {
     padding: 8px 0; 
 }
 
-.left-column {
-    flex:1
-}
-
-.right-column {
-    text-align: right;
-    min-width: 120px;
-}
 
 .standard-price {
-    font-size: 20px;
+    font-size: 18px;
     color: black;
     margin-top: 8px ;
-    margin-left: 35px;
+    margin-left: 25px;
+    font-weight: 500;
+    line-height: 14.52px;
+    
 
 }
 
@@ -157,29 +161,34 @@ h4 {
     display: flex;
     flex-direction: column; /* Stack prices vertically */
     align-items: flex-end;
+    text-align: right;
 }
 
+.price-section
+
 .current-price {
-    font-size: 20px;
-    color: #333;
+    font-size: 18px;
+    font-weight:500px;
+    line-height: 17.5px;
+    margin: 0;
+    color: black;
     margin-bottom: 4px; /* Add space between current and original price */
-    font-weight: bold;
 }
 
 .original-price {
+    
     text-decoration: line-through;
     color: #C8C8C8;
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 14.1px;
+    margin-right: 20px;
+
 }
 
-.price-section h2 {
-    font-size: 18px;
-    color: #333;
-}
 
 
 .size-color-selection {
-    font-family: Inter, sans-serif;
     max-width: 300px;
     margin-left: 30px;
     /* margin: 20px auto;  */
@@ -200,9 +209,11 @@ h4 {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
-    font-weight: bold;
+    font-weight: 400;
     margin-left:10px;
     margin-right:145px;
+    line-height: 12.03px;
+    
 }
 
 
@@ -217,37 +228,20 @@ h4 {
 }
 
 
-/* Styling for the labels */
+
 .size-color-row label {
     font-size: 14px;
     font-weight: bold;
-     /* Space between label and select box */
+     
 }
-
-/* Select box styling */
-/* .size-select, .color-select {
-    padding: 8px 12px; 
-    border: 1px solid #C8C8C8;
-    border-radius: 4px;
-    font-size: 14px;
-    width: 120px; 
-    height: 36px; 
-} */
 
 .box-number {
-    flex: 0 0 30px;
-    font-size: 0.9em;
-    color: #666;
+    font-size: 12.04px;
+    font-weight: 500;
+    line-height: 10.94px;
+    margin-right: 10px;
 }
 
-.size-select,
-.color-select {
-    padding: 8px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1em;
-}
 
 @media (max-width: 480px) {
     .size-color-selection {
@@ -332,38 +326,40 @@ h4 {
 
 /* Typography for Size and Colour Labels */
 .size-color-header label {
-    font-family: 'Inter', sans-serif;
     padding-inline: 20px;
-    font-size: 9.94px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 12.03px;
     text-align: left;
+    margin-right: -14px;
+    padding-left: 15px;
     color: #000; /* Adjust this color as needed */
 }
 
 /* Styling for Select Boxes */
 .size-select, .color-select {
-    font-family: 'Inter', sans-serif;
-    font-size: 9.94px;
+    font-size: auto;
     font-weight: 400;
     line-height: 12.03px;
-    width: 65.98px; /* Adjust for size select box */
+    width: 70.98px;
     height: 25.31px;
     border-radius: 1.81px;
     border: 0.9px solid #C8C8C8;
     opacity: 1;
-    padding: 0 5px;
+    padding: 0 6px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    
 }
 
+ 
 
-/* ... (Previous CSS styles) ... */
 
 .footer {
     background-color: #F8F8F8;
-    padding: 20px;
-    margin-top: 16px;
+    margin-top: 20px;
     width: 100%;
-    border-radius: 8px;
     box-sizing: border-box;
 }
 
@@ -385,25 +381,35 @@ h4 {
 
 .free-delivery {
     color: #FF6B82;
-    font-weight: bold;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 16.94px;
     margin-right: auto;
 }
 
-.total-price {
-    font-weight: bold;
-    margin: 0;
-}
+.total {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 16.94px;
+  }
+  
+  span.total-price {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 16.94px;
+  }
 
 .add-to-cart {
     background-color: #FF6B82;
     color: white;
     border: none;
-    padding: 10px 16px;
+    padding: 10px 20px;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 20px;
     cursor: pointer;
     width: 100%;
-    margin-top: 10px;
+    height: 100%;
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -411,13 +417,18 @@ h4 {
 
 .plus-icon {
     margin-right: 8px;
+    font-size: 30px;
 }
 
 .powered-by {
-    font-size: 12px;
-    color: #C8C8C8;
+    font-size: 16px;
+    line-height: 14.52px;
+    font-style: italic;
+    font-weight: 400;
     text-align: right;
-    margin-top: 10px; /* Add some space above the text */
+    margin-top: 10px; 
+    color: #00000066;
+    ;
 }
 
 
