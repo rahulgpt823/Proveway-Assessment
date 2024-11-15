@@ -7,10 +7,12 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #fdfdfd;
-    margin: 0 auto;
+    margin-top:50px;
+    margin-left: 50px;
     padding: 0 20px;
     max-width: 800px;
     color: #333;
+    justify-content: center;
 }
 
 #header {
@@ -40,20 +42,22 @@ body {
 .card {
     border: 1px solid #C8C8C8;
     border-radius: 8px;
-    padding: 15px;
+    padding: 16px;
+    position: relative;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin-bottom: 16px;
 }
 
 .card.expanded {
-    border-color: #FF6B82;
-    padding: 20px;
+    border: 2px solid #FF6B82;
+    padding: 15px;
 }
 
 .inline-section {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 }
 
 .btn1 {
@@ -78,6 +82,20 @@ h4 {
     font-size: 12px;
 }
 
+.form-content {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;
+}
+
+.left-column {
+    flex:1
+}
+
+.right-column {
+    text-align: right;
+}
+
 .standard-price {
     font-size: 12px;
     color: #888;
@@ -85,14 +103,14 @@ h4 {
 
 .price-section {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-top: 10px;
+    flex-direction: column; /* Stack prices vertically */
+    align-items: flex-end;
 }
 
-.price-section h2 {
+.current-price {
     font-size: 18px;
     color: #333;
+    margin-bottom: 4px; /* Add space between current and original price */
 }
 
 .original-price {
@@ -101,35 +119,151 @@ h4 {
     font-size: 14px;
 }
 
+.price-section h2 {
+    font-size: 18px;
+    color: #333;
+}
+
 
 .size-color-selection {
-    margin-top: 10px;
-    display: block;
+    display: flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    gap:2px/* Adds space above the selectors */
+}
+
+.size-color-header {
+    display: flex;
+    align-items: center;
+    gap:10px;
+
 }
 
 .size-color-selection.hidden {
     display: none;
 }
-
 .size-color-row {
     display: flex;
-    justify-content: space-between;
-    gap: 10px;
+    align-items: center; 
+    gap: 10px; /* Space between Size and Colour select boxes */
+}
+
+/* Styling for the labels */
+.size-color-row label {
+    font-size: 14px;
+    font-weight: bold;
+     /* Space between label and select box */
+}
+
+/* Select box styling */
+.size-select, .color-select {
+    padding: 5px;
+    border: 1px solid #C8C8C8;
+    border-radius: 4px;
+    font-size: 14px;
 }
 
 
+/* New badge styling with L-shaped connector */
+
 .badge {
-    display: inline-block;
     background-color: #FF6B82;
     color: white;
-    font-size: 10px;
+    padding: 4px 12px;
+    border-radius: 0 0 4px 4px;
+    font-size: 12px;
     font-weight: bold;
-    padding: 5px 10px;
+    white-space: nowrap;
+    position: relative;
+}
+/* Create the L-shaped border */
+/* .badge::before {
+    content: '';
+    position: absolute;
+    width: 129px;
+    height: 2px;
+    background-color: #FF6B82;
+    top: 0;
+    right: 0;
+    transform: translateX(-10px);
+} */
+/* Add a small white background to cover the intersection */
+/* .badge::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10px;
+    right: 0;
+    border-left: 2px solid #FF6B82;
+    border-top: 2px solid #FF6B82;
+    transform: rotate(45deg);
+    transform-origin: top left;
+    background-color: #FF6B82;
+    z-index: -1;
     border-radius: 4px;
-    position: absolute; 
-    top: -10px; 
-    right: -10px; 
-    transform: translate(50%, -50%);
+} */
+
+.badge-container {
+    position: absolute;
+    top: -7px;
+    right: 20px;
+    
+    z-index: 1;
+}
+
+.badge-container::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: #FF6B82;
+    top: 0;
+    left:-20px;
+    right: 100%; /* Position it to the left of container */
+    transform-origin: right;
+    transform: skewY(-15deg);
+}
+
+/* Right line */
+.badge-container::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: #FF6B82;
+    top: 0;
+    left: 100%; /* Position it to the right of container */
+    transform-origin: left;
+    transform: skewY(15deg);
+    
+}
+
+
+
+
+/* Typography for Size and Colour Labels */
+.size-color-header label {
+    font-family: 'Inter', sans-serif;
+    padding-inline: 20px;
+    font-size: 9.94px;
+    font-weight: 400;
+    line-height: 12.03px;
+    text-align: left;
+    color: #000; /* Adjust this color as needed */
+}
+
+/* Styling for Select Boxes */
+.size-select, .color-select {
+    font-family: 'Inter', sans-serif;
+    font-size: 9.94px;
+    font-weight: 400;
+    line-height: 12.03px;
+    width: 65.98px; /* Adjust for size select box */
+    height: 25.31px;
+    border-radius: 1.81px;
+    border: 0.9px solid #C8C8C8;
+    opacity: 1;
+    padding: 0 5px;
 }
 
 

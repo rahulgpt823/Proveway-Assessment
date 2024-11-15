@@ -6,11 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardData = [
         {
             unitText: '1 Unit',
+            standardPrice:'standard Price',
             discountText: '10% off',
             currentPrice: '$10.00 USD',
             originalPrice: '$24.00 USD',
             badgeText: '',
-            isBadgeVisible: false
+            isBadgeVisible: false,
+            size: 'S',
+            color: 'Black'
         },
         {
             unitText: '2 Unit',
@@ -18,7 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
             currentPrice: '$18.00 USD',
             originalPrice: '$24.00 USD',
             badgeText: 'MOST POPULAR',
-            isBadgeVisible: true
+            isBadgeVisible: true,
+            size: 'S',
+            color: 'Colour'
         },
         {
             unitText: '3 Unit',
@@ -26,7 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
             currentPrice: '$24.00 USD',
             originalPrice: '$24.00 USD',
             badgeText: '',
-            isBadgeVisible: false
+            isBadgeVisible: false,
+            size: 'S',
+            color: 'Black'
         }
     ];
 
@@ -43,16 +50,32 @@ document.addEventListener('DOMContentLoaded', () => {
         cardClone.querySelector('.discount-text').textContent = data.discountText;
         cardClone.querySelector('.current-price').textContent = data.currentPrice;
         cardClone.querySelector('.original-price').textContent = data.originalPrice;
+       
 
+        const standardPriceElement = cardClone.querySelector('.standard-price');
+        if (data.standardPrice) {
+            standardPriceElement.textContent = data.standardPrice;
+            standardPriceElement.style.display = 'block'; // Make it visible
+        }
         // Show the badge if necessary
         const badge = cardClone.querySelector('.badge');
-        if (data.isBadgeVisible) {
-            badge.style.display = 'inline';
+        if (data.isBadgeVisible && data.badgeText) {
             badge.textContent = data.badgeText;
+            badge.style.display = 'block';  // Changed from empty string to 'block'
+            badge.style.visibility = 'visible'; // Ensure visibility
+        } else {
+            badge.style.display = 'none';
         }
 
         // Append the card to the container
         cardContainer.appendChild(cardClone);
+
+            // Set the initial size and color selections
+    const sizeSelect = cardClone.querySelector('.size-select');
+    sizeSelect.value = data.size;
+
+    const colorSelect = cardClone.querySelector('.color-select');
+    colorSelect.value = data.color;
     });
 });
 

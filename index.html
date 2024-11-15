@@ -22,27 +22,41 @@
             <!-- A single card template to be reused -->
             <div class="card-template" style="display: none;">
                 <form class="prim_form">
+                    <div class="form-content">
+                        <!-- Left Column -->
+                        <div class="left-column">
                     <div class="inline-section">
+                        
                         <input type="radio" class="btn1">
                         <h1 class="unit-text"></h1>
                         <h4 class="discount-text"></h4>
+                        <div class="badge-container">
                         <div class="badge" style="display: none;"></div>
+                        </div>
                     </div>
-                    <p class="standard-price">Standard Price</p>
+                    <p class="standard-price" style="display: none;"></p>
+                    </div>
+                <!-- Right Column -->
+            <div class="right-column">
                     <div class="price-section">
                         <h2 class="current-price"></h2>
                         <h3 class="original-price"></h3>
                     </div>
+                    </div>
+                    </div>
                     <div class="size-color-selection hidden">
+                        <div class="size-color-header">
+                            <label for="size-select-1">Size</label>
+                            <label for="color-select-1">Colour</label>
+                        </div>
                         <div class="size-color-row">
-                            <label>Size:</label>
-                            <select class="size-select">
+                            <!-- <span class="box-number">#1</span> -->
+                            <select id="size-select-1" class="size-select">
                                 <option>S</option>
                                 <option>M</option>
                                 <option>L</option>
                             </select>
-                            <label>Colour:</label>
-                            <select class="color-select">
+                            <select id="color-select-1" class="color-select">
                                 <option>Black</option>
                                 <option>White</option>
                                 <option>Red</option>
@@ -51,6 +65,7 @@
                     </div>
                 </form>
             </div>
+
         </div>
         <!-- Footer section -->
         <div class="footer">
